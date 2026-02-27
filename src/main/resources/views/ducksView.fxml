@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.gui.DuckController">
+
+    <top>
+        <HBox spacing="10" style="-fx-padding: 10;">
+            <Label text="Filter by type:"/>
+            <ComboBox fx:id="comboTip"/>
+        </HBox>
+    </top>
+
+
+    <center>
+        <VBox spacing="10" style="-fx-padding: 10;">
+
+            <TableView fx:id="table" prefWidth="800">
+                <columns>
+                    <TableColumn fx:id="colId" text="Id" prefWidth="60"/>
+                    <TableColumn fx:id="colUsername" text="Username" prefWidth="150"/>
+                    <TableColumn fx:id="colEmail" text="Email" prefWidth="180"/>
+                    <TableColumn fx:id="colPassword" text="Password" prefWidth="150"/>
+                    <TableColumn fx:id="colTip" text="Tip" prefWidth="120"/>
+                    <TableColumn fx:id="colViteza" text="Viteza" prefWidth="80"/>
+                    <TableColumn fx:id="colRezistenta" text="Rezistenta" prefWidth="80"/>
+                </columns>
+            </TableView>
+
+
+            <HBox spacing="20" alignment="CENTER" style="-fx-padding: 10;">
+                <Button fx:id="btnPrev" text="Previous" onAction="#prevPage"/>
+                <Label fx:id="lblPage" text="Page 1 / 1"/>
+                <Button fx:id="btnNext" text="Next" onAction="#nextPage"/>
+            </HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

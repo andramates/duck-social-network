@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.gui.FriendRequestsController"
+            fx:id="root">
+
+    <left>
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <Label text="Received Requests" style="-fx-font-size: 16px;"/>
+            <ListView fx:id="receivedList" prefWidth="250" prefHeight="350"/>
+            <HBox spacing="10">
+                <Button text="Accept" onAction="#onAccept"/>
+                <Button text="Reject" onAction="#onReject"/>
+            </HBox>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <Label text="Sent Requests" style="-fx-font-size: 16px;"/>
+            <ListView fx:id="sentList" prefWidth="250" prefHeight="350"/>
+        </VBox>
+    </center>
+
+    <right>
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <Label text="Add Friend" style="-fx-font-size: 16px;"/>
+
+            <TextField fx:id="searchField" promptText="Search users..." onKeyReleased="#onSearch"/>
+
+            <ListView fx:id="usersList" prefWidth="220" prefHeight="300"/>
+
+            <Button text="Send Friend Request"
+                    prefWidth="200"
+                    onAction="#onSendFriendRequest"/>
+        </VBox>
+    </right>
+
+</BorderPane>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.gui.UserController">
+
+    <top>
+        <VBox spacing="10" style="-fx-padding: 15;">
+
+            <Label text="ADD USER" style="-fx-font-size: 16px;"/>
+
+            <HBox spacing="10">
+                <Label text="User type:"/>
+                <ComboBox fx:id="comboType" prefWidth="150"/>
+            </HBox>
+
+            <GridPane fx:id="formGrid" hgap="10" vgap="10">
+            </GridPane>
+
+            <Button text="Add User" onAction="#addUser"/>
+        </VBox>
+    </top>
+
+    <bottom>
+        <VBox spacing="10" style="-fx-padding: 15;">
+
+            <Label text="DELETE USER" style="-fx-font-size: 16px;"/>
+
+            <HBox spacing="10">
+                <Label text="User ID:"/>
+                <TextField fx:id="tfDeleteId" prefWidth="120"/>
+                <Button text="Delete User" onAction="#deleteUser"/>
+            </HBox>
+
+        </VBox>
+    </bottom>
+
+</BorderPane>

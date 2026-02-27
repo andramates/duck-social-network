@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.gui.MessageController"
+            fx:id="root">
+
+    <!-- LEFT: users list -->
+    <left>
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <Label text="Users:" style="-fx-font-size: 16px;"/>
+            <ListView fx:id="usersListView"
+                      onMouseClicked="#onUserSelected"
+                      prefWidth="150"
+                      prefHeight="400"/>
+        </VBox>
+    </left>
+
+    <!-- CENTER: chat messages -->
+    <center>
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <Label text="Conversation:" style="-fx-font-size: 16px;"/>
+            <ListView fx:id="messagesListView"
+                      prefHeight="400"
+                      onMouseClicked="#onMessageSelected"/>
+        </VBox>
+    </center>
+
+    <!-- BOTTOM: typing area + reply info -->
+    <bottom>
+        <VBox spacing="10" style="-fx-padding: 20;">
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label fx:id="replyLabel"
+                       text="Replying to: "
+                       visible="false"
+                       style="-fx-text-fill: #444444; -fx-font-size: 14px;"/>
+                <Button fx:id="cancelReplyBtn"
+                        text="Cancel"
+                        visible="false"
+                        onAction="#onCancelReply"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <TextArea fx:id="messageBox"
+                          promptText="Type message..."
+                          prefRowCount="2"
+                          prefWidth="400"/>
+
+                <Button text="Send"
+                        onAction="#onSend"
+                        prefHeight="50"
+                        prefWidth="100"/>
+            </HBox>
+
+        </VBox>
+    </bottom>
+
+</BorderPane>

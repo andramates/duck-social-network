@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.gui.RaceEventController">
+
+    <top>
+        <VBox spacing="10" style="-fx-padding: 15;">
+
+            <Label text="Race Events"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+            <Button text="Add Race Event"
+                    prefWidth="200"
+                    onAction="#onAddRaceEvent"/>
+
+        </VBox>
+    </top>
+
+
+    <center>
+        <VBox spacing="15" style="-fx-padding: 15;">
+
+            <TableView fx:id="table" prefHeight="300">
+
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                    <TableColumn fx:id="colTitle" text="Title" prefWidth="200"/>
+                    <TableColumn fx:id="colDucks" text="Nr Ducks" prefWidth="100"/>
+                </columns>
+
+            </TableView>
+
+            <HBox spacing="15" alignment="CENTER">
+
+                <Button fx:id="btnSubscribe"
+                        text="Subscribe"
+                        onAction="#onSubscribe"/>
+
+                <Button fx:id="btnUnsubscribe"
+                        text="Unsubscribe"
+                        onAction="#onUnsubscribe"/>
+
+                <Button fx:id="btnStartRace"
+                        text="Start Race"
+                        onAction="#onStartRace"/>
+
+            </HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.gui.MainMenuController"
+            fx:id="root"
+            style="-fx-background-color: white;">
+
+    <!-- TOP RIGHT ICON BAR -->
+    <top>
+        <HBox alignment="CENTER_RIGHT"
+              spacing="15"
+              style="-fx-padding: 15 20 10 20;">
+
+            <Button text="👤"
+                    style="-fx-font-size: 18px;"
+                    onAction="#openProfile"/>
+
+            <Button text="🔔"
+                    style="-fx-font-size: 18px;"
+                    onAction="#openNotifications"/>
+
+            <Button text="🚪"
+                    style="-fx-font-size: 18px;"
+                    onAction="#onLogout"/>
+        </HBox>
+    </top>
+
+    <!-- MAIN MENU -->
+    <center>
+        <VBox alignment="CENTER"
+              spacing="16"
+              style="-fx-padding: 50;">
+
+            <Label text="Social Network"
+                   style="-fx-font-size: 26px;
+                          -fx-font-weight: bold;"/>
+
+            <Label text="Menu"
+                   style="-fx-font-size: 14px;
+                          -fx-text-fill: #888888;"/>
+
+            <Separator prefWidth="260"/>
+
+            <Button text="💬  Chat"
+                    prefWidth="260"
+                    onAction="#openChat"/>
+
+            <Button text="👥  Friend Requests"
+                    prefWidth="260"
+                    onAction="#openFriendRequests"/>
+
+            <Button text="🏁  Race Events"
+                    prefWidth="260"
+                    onAction="#openRaceEvents"/>
+
+            <Button text="🌍  Communities"
+                    prefWidth="260"
+                    onAction="#openCommunities"/>
+
+            <Button text="🦆  Ducks"
+                    prefWidth="260"
+                    onAction="#openDucks"/>
+
+            <Button text="⚙️  Users"
+                    prefWidth="260"
+                    onAction="#openUsers"/>
+
+            <Button text="🤝  Friendships"
+                    prefWidth="260"
+                    onAction="#openFriendships"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>

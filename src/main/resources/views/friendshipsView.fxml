@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.gui.FriendshipController">
+
+    <center>
+        <VBox spacing="20" alignment="CENTER" style="-fx-padding: 30;">
+
+<!--            <Label text="Manage Friendships" style="-fx-font-size: 20px;"/>-->
+
+
+            <VBox spacing="10" alignment="CENTER">
+                <Label text="Add Friendship" style="-fx-font-size: 16px;"/>
+
+                <HBox spacing="10">
+                    <Label text="User A:"/>
+                    <ComboBox fx:id="comboUserA" prefWidth="200"/>
+                </HBox>
+
+                <HBox spacing="10">
+                    <Label text="User B:"/>
+                    <ComboBox fx:id="comboUserB" prefWidth="200"/>
+                </HBox>
+
+                <Button text="Add Friendship" onAction="#addFriendship"/>
+            </VBox>
+
+            <Separator prefWidth="400"/>
+
+            <VBox spacing="10" alignment="CENTER">
+                <Label text="Remove Friendship" style="-fx-font-size: 16px;"/>
+
+                <HBox spacing="10">
+                    <Label text="User A:"/>
+                    <ComboBox fx:id="comboRemoveA" prefWidth="200"/>
+                </HBox>
+
+                <HBox spacing="10">
+                    <Label text="User B:"/>
+                    <ComboBox fx:id="comboRemoveB" prefWidth="200"/>
+                </HBox>
+
+                <Button text="Remove Friendship" onAction="#removeFriendship"/>
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

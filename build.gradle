@@ -1,0 +1,58 @@
+//plugins {
+//    id 'application'
+//    id 'java'
+//    id 'org.openjfx.javafxplugin' version '0.0.13'
+//}
+//
+//group = 'app'
+//version = '1.0'
+//
+//repositories {
+//    mavenCentral()
+//}
+//
+//javafx {
+//    version = '17.0.2'
+//    modules = [
+//            'javafx.controls',
+//            'javafx.fxml'
+//    ]
+//}
+//
+//dependencies {
+//    implementation 'org.postgresql:postgresql:42.7.3'
+//
+//    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+//}
+//
+//application {
+//    mainClass = 'app.Main'
+//}
+//
+//test {
+//    useJUnitPlatform()
+//}
+
+
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.postgresql:postgresql:42.7.3'
+}
+
+
+javafx {
+    version = "21"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+application {
+    mainClass = 'ui.gui.MainFX'
+}
