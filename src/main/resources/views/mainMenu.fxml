@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -7,73 +8,86 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="ui.gui.MainMenuController"
             fx:id="root"
-            style="-fx-background-color: white;">
+            stylesheets="@main.css">
 
-    <!-- TOP RIGHT ICON BAR -->
+    <!-- HEADER -->
     <top>
-        <HBox alignment="CENTER_RIGHT"
-              spacing="15"
-              style="-fx-padding: 15 20 10 20;">
+        <HBox alignment="CENTER_LEFT"
+              spacing="20"
+              styleClass="header">
 
-            <Button text="👤"
-                    style="-fx-font-size: 18px;"
+            <Label text="Duck Network"
+                   styleClass="logo"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <StackPane>
+                <Button text="Notifications"
+                        styleClass="header-button"
+                        onAction="#openNotifications"/>
+
+                <Label fx:id="notificationBadge"
+                       text="3"
+                       styleClass="notification-badge"
+                       StackPane.alignment="TOP_RIGHT"
+                       translateX="6"
+                       translateY="-6"/>
+            </StackPane>
+
+            <Button text="Profile"
+                    styleClass="header-button"
                     onAction="#openProfile"/>
 
-            <Button text="🔔"
-                    style="-fx-font-size: 18px;"
-                    onAction="#openNotifications"/>
-
-            <Button text="🚪"
-                    style="-fx-font-size: 18px;"
+            <Button text="Logout"
+                    styleClass="header-button"
                     onAction="#onLogout"/>
         </HBox>
     </top>
 
-    <!-- MAIN MENU -->
-    <center>
-        <VBox alignment="CENTER"
-              spacing="16"
-              style="-fx-padding: 50;">
+    <!-- SIDEBAR -->
+    <left>
+        <VBox spacing="10"
+              styleClass="sidebar">
 
-            <Label text="Social Network"
-                   style="-fx-font-size: 26px;
-                          -fx-font-weight: bold;"/>
-
-            <Label text="Menu"
-                   style="-fx-font-size: 14px;
-                          -fx-text-fill: #888888;"/>
-
-            <Separator prefWidth="260"/>
-
-            <Button text="💬  Chat"
-                    prefWidth="260"
+            <Button text="Chat"
+                    styleClass="sidebar-button"
                     onAction="#openChat"/>
 
-            <Button text="👥  Friend Requests"
-                    prefWidth="260"
+            <Button text="Friend Requests"
+                    styleClass="sidebar-button"
                     onAction="#openFriendRequests"/>
 
-            <Button text="🏁  Race Events"
-                    prefWidth="260"
+            <Button text="Race Events"
+                    styleClass="sidebar-button"
                     onAction="#openRaceEvents"/>
 
-            <Button text="🌍  Communities"
-                    prefWidth="260"
+            <Button text="Communities"
+                    styleClass="sidebar-button"
                     onAction="#openCommunities"/>
 
-            <Button text="🦆  Ducks"
-                    prefWidth="260"
+            <Button text="Ducks"
+                    styleClass="sidebar-button"
                     onAction="#openDucks"/>
 
-            <Button text="⚙️  Users"
-                    prefWidth="260"
+            <Button text="Users"
+                    styleClass="sidebar-button"
                     onAction="#openUsers"/>
 
-            <Button text="🤝  Friendships"
-                    prefWidth="260"
+            <Button text="Friendships"
+                    styleClass="sidebar-button"
                     onAction="#openFriendships"/>
-
         </VBox>
+    </left>
+
+    <!-- MAIN CONTENT -->
+    <center>
+        <StackPane fx:id="contentArea"
+                   styleClass="content-area">
+
+            <Label text="Select a section from the menu"
+                   styleClass="placeholder-text"/>
+
+        </StackPane>
     </center>
 
 </BorderPane>

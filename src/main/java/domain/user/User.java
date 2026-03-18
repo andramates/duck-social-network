@@ -74,5 +74,9 @@ public abstract class User extends Entity<Long> implements Observer {
         eventsLog.add("[EVENT][" + eventTitle + "] " + message);
     }
 
+    @Override
+    public String toString() {
+        return username;
+    }
 }
 

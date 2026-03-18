@@ -1,41 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
 
 <BorderPane xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ui.gui.UserController">
+            fx:controller="ui.gui.UserController"
+            stylesheets="@main.css">
 
-    <top>
-        <VBox spacing="10" style="-fx-padding: 15;">
+    <center>
+        <VBox spacing="30" styleClass="content-area">
 
-            <Label text="ADD USER" style="-fx-font-size: 16px;"/>
+            <!-- ADD USER -->
+            <VBox spacing="15" styleClass="card">
 
-            <HBox spacing="10">
-                <Label text="User type:"/>
-                <ComboBox fx:id="comboType" prefWidth="150"/>
-            </HBox>
+                <Label text="Add User" styleClass="card-title"/>
 
-            <GridPane fx:id="formGrid" hgap="10" vgap="10">
-            </GridPane>
+                <HBox spacing="10">
+                    <Label text="User type:"/>
+                    <ComboBox fx:id="comboType" prefWidth="180"/>
+                </HBox>
 
-            <Button text="Add User" onAction="#addUser"/>
+                <GridPane fx:id="formGrid" hgap="15" vgap="12"/>
+
+                <Button text="Add User"
+                        onAction="#addUser"
+                        styleClass="primary-button"/>
+            </VBox>
+
+            <!-- DELETE USER -->
+            <VBox spacing="15" styleClass="card">
+
+                <Label text="Delete User" styleClass="card-title"/>
+
+                <HBox spacing="10">
+                    <Label text="User ID:"/>
+                    <TextField fx:id="tfDeleteId" prefWidth="150"/>
+                    <Button text="Delete"
+                            onAction="#deleteUser"
+                            styleClass="danger-button"/>
+                </HBox>
+
+            </VBox>
+
         </VBox>
-    </top>
-
-    <bottom>
-        <VBox spacing="10" style="-fx-padding: 15;">
-
-            <Label text="DELETE USER" style="-fx-font-size: 16px;"/>
-
-            <HBox spacing="10">
-                <Label text="User ID:"/>
-                <TextField fx:id="tfDeleteId" prefWidth="120"/>
-                <Button text="Delete User" onAction="#deleteUser"/>
-            </HBox>
-
-        </VBox>
-    </bottom>
+    </center>
 
 </BorderPane>

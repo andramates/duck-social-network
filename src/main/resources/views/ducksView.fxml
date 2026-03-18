@@ -3,37 +3,72 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ui.gui.DuckController">
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.gui.DuckController"
+            stylesheets="@main.css">
 
+    <!-- HEADER -->
     <top>
-        <HBox spacing="10" style="-fx-padding: 10;">
+        <HBox alignment="CENTER_LEFT"
+              spacing="15"
+              styleClass="content-header">
+
+            <Label text="Ducks"
+                   styleClass="section-title"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
             <Label text="Filter by type:"/>
-            <ComboBox fx:id="comboTip"/>
+            <ComboBox fx:id="comboTip"
+                      prefWidth="180"/>
         </HBox>
     </top>
 
-
+    <!-- TABLE AREA -->
     <center>
-        <VBox spacing="10" style="-fx-padding: 10;">
+        <VBox spacing="20"
+              styleClass="content-area">
 
-            <TableView fx:id="table" prefWidth="800">
-                <columns>
-                    <TableColumn fx:id="colId" text="Id" prefWidth="60"/>
-                    <TableColumn fx:id="colUsername" text="Username" prefWidth="150"/>
-                    <TableColumn fx:id="colEmail" text="Email" prefWidth="180"/>
-                    <TableColumn fx:id="colPassword" text="Password" prefWidth="150"/>
-                    <TableColumn fx:id="colTip" text="Tip" prefWidth="120"/>
-                    <TableColumn fx:id="colViteza" text="Viteza" prefWidth="80"/>
-                    <TableColumn fx:id="colRezistenta" text="Rezistenta" prefWidth="80"/>
-                </columns>
-            </TableView>
+            <VBox styleClass="card" VBox.vgrow="ALWAYS">
 
+                <TableView fx:id="table"
+                           VBox.vgrow="ALWAYS"
+                           styleClass="modern-table">
 
-            <HBox spacing="20" alignment="CENTER" style="-fx-padding: 10;">
-                <Button fx:id="btnPrev" text="Previous" onAction="#prevPage"/>
-                <Label fx:id="lblPage" text="Page 1 / 1"/>
-                <Button fx:id="btnNext" text="Next" onAction="#nextPage"/>
+                    <columns>
+                        <TableColumn fx:id="colId" text="Id" prefWidth="60"/>
+                        <TableColumn fx:id="colUsername" text="Username" prefWidth="150"/>
+                        <TableColumn fx:id="colEmail" text="Email" prefWidth="180"/>
+                        <TableColumn fx:id="colPassword" text="Password" prefWidth="150"/>
+                        <TableColumn fx:id="colTip" text="Tip" prefWidth="120"/>
+                        <TableColumn fx:id="colViteza" text="Viteza" prefWidth="90"/>
+                        <TableColumn fx:id="colRezistenta" text="Rezistenta" prefWidth="110"/>
+                    </columns>
+
+                </TableView>
+
+            </VBox>
+
+            <!-- PAGINATION -->
+            <HBox spacing="20"
+                  alignment="CENTER"
+                  styleClass="pagination-bar">
+
+                <Button fx:id="btnPrev"
+                        text="Previous"
+                        onAction="#prevPage"
+                        styleClass="secondary-button"/>
+
+                <Label fx:id="lblPage"
+                       text="Page 1 / 1"
+                       styleClass="secondary-text"/>
+
+                <Button fx:id="btnNext"
+                        text="Next"
+                        onAction="#nextPage"
+                        styleClass="secondary-button"/>
+
             </HBox>
 
         </VBox>

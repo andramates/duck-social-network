@@ -5,48 +5,67 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ui.gui.RaceEventController">
+            fx:controller="ui.gui.RaceEventController"
+            stylesheets="@main.css">
 
+    <!-- HEADER -->
     <top>
-        <VBox spacing="10" style="-fx-padding: 15;">
+        <HBox alignment="CENTER_LEFT"
+              spacing="20"
+              styleClass="content-header">
 
             <Label text="Race Events"
-                   style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                   styleClass="section-title"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
 
             <Button text="Add Race Event"
-                    prefWidth="200"
-                    onAction="#onAddRaceEvent"/>
-
-        </VBox>
+                    onAction="#onAddRaceEvent"
+                    styleClass="primary-button"/>
+        </HBox>
     </top>
 
-
+    <!-- MAIN CONTENT -->
     <center>
-        <VBox spacing="15" style="-fx-padding: 15;">
+        <VBox spacing="25"
+              styleClass="content-area">
 
-            <TableView fx:id="table" prefHeight="300">
+            <!-- TABLE CARD -->
+            <VBox styleClass="card" VBox.vgrow="ALWAYS">
 
-                <columns>
-                    <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
-                    <TableColumn fx:id="colTitle" text="Title" prefWidth="200"/>
-                    <TableColumn fx:id="colDucks" text="Nr Ducks" prefWidth="100"/>
-                </columns>
+                <TableView fx:id="table"
+                           VBox.vgrow="ALWAYS"
+                           styleClass="modern-table">
 
-            </TableView>
+                    <columns>
+                        <TableColumn fx:id="colId" text="ID" prefWidth="80"/>
+                        <TableColumn fx:id="colTitle" text="Title" prefWidth="250"/>
+                        <TableColumn fx:id="colDucks" text="Nr Ducks" prefWidth="150"/>
+                    </columns>
 
-            <HBox spacing="15" alignment="CENTER">
+                </TableView>
+
+            </VBox>
+
+            <!-- ACTION BUTTONS -->
+            <HBox spacing="20"
+                  alignment="CENTER"
+                  styleClass="action-bar">
 
                 <Button fx:id="btnSubscribe"
                         text="Subscribe"
-                        onAction="#onSubscribe"/>
+                        onAction="#onSubscribe"
+                        styleClass="primary-button"/>
 
                 <Button fx:id="btnUnsubscribe"
                         text="Unsubscribe"
-                        onAction="#onUnsubscribe"/>
+                        onAction="#onUnsubscribe"
+                        styleClass="secondary-button"/>
 
                 <Button fx:id="btnStartRace"
                         text="Start Race"
-                        onAction="#onStartRace"/>
+                        onAction="#onStartRace"
+                        styleClass="danger-button"/>
 
             </HBox>
 

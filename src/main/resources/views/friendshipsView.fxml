@@ -1,50 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <BorderPane xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ui.gui.FriendshipController">
+            fx:controller="ui.gui.FriendshipController"
+            stylesheets="@main.css">
 
     <center>
-        <VBox spacing="20" alignment="CENTER" style="-fx-padding: 30;">
+        <VBox spacing="30" styleClass="content-area">
 
-<!--            <Label text="Manage Friendships" style="-fx-font-size: 20px;"/>-->
+            <Label text="Manage Friendships" styleClass="section-title"/>
 
+            <!-- ADD FRIENDSHIP CARD -->
+            <VBox spacing="15" styleClass="card">
+                <Label text="Add Friendship" styleClass="card-title"/>
 
-            <VBox spacing="10" alignment="CENTER">
-                <Label text="Add Friendship" style="-fx-font-size: 16px;"/>
+                <GridPane hgap="15" vgap="12">
+                    <Label text="User A:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="comboUserA"
+                              GridPane.rowIndex="0" GridPane.columnIndex="1"
+                              prefWidth="220"/>
 
-                <HBox spacing="10">
-                    <Label text="User A:"/>
-                    <ComboBox fx:id="comboUserA" prefWidth="200"/>
-                </HBox>
+                    <Label text="User B:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="comboUserB"
+                              GridPane.rowIndex="1" GridPane.columnIndex="1"
+                              prefWidth="220"/>
+                </GridPane>
 
-                <HBox spacing="10">
-                    <Label text="User B:"/>
-                    <ComboBox fx:id="comboUserB" prefWidth="200"/>
-                </HBox>
-
-                <Button text="Add Friendship" onAction="#addFriendship"/>
+                <Button text="Add"
+                        onAction="#addFriendship"
+                        styleClass="primary-button"
+                        maxWidth="120"/>
             </VBox>
 
-            <Separator prefWidth="400"/>
+            <!-- REMOVE FRIENDSHIP CARD -->
+            <VBox spacing="15" styleClass="card">
+                <Label text="Remove Friendship" styleClass="card-title"/>
 
-            <VBox spacing="10" alignment="CENTER">
-                <Label text="Remove Friendship" style="-fx-font-size: 16px;"/>
+                <GridPane hgap="15" vgap="12">
+                    <Label text="User A:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="comboRemoveA"
+                              GridPane.rowIndex="0" GridPane.columnIndex="1"
+                              prefWidth="220"/>
 
-                <HBox spacing="10">
-                    <Label text="User A:"/>
-                    <ComboBox fx:id="comboRemoveA" prefWidth="200"/>
-                </HBox>
+                    <Label text="User B:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="comboRemoveB"
+                              GridPane.rowIndex="1" GridPane.columnIndex="1"
+                              prefWidth="220"/>
+                </GridPane>
 
-                <HBox spacing="10">
-                    <Label text="User B:"/>
-                    <ComboBox fx:id="comboRemoveB" prefWidth="200"/>
-                </HBox>
-
-                <Button text="Remove Friendship" onAction="#removeFriendship"/>
+                <Button text="Remove"
+                        onAction="#removeFriendship"
+                        styleClass="danger-button"
+                        maxWidth="120"/>
             </VBox>
 
         </VBox>

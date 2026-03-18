@@ -1,63 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx"
+<BorderPane xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="ui.gui.MessageController"
-            fx:id="root">
+            fx:id="root"
+            stylesheets="@main.css">
 
-    <!-- LEFT: users list -->
+    <!-- LEFT USERS -->
     <left>
-        <VBox spacing="10" style="-fx-padding: 20;">
-            <Label text="Users:" style="-fx-font-size: 16px;"/>
+        <VBox styleClass="chat-sidebar">
+
+            <Label text="Chats" styleClass="sidebar-title"/>
+
             <ListView fx:id="usersListView"
-                      onMouseClicked="#onUserSelected"
-                      prefWidth="150"
-                      prefHeight="400"/>
+                      styleClass="users-list"
+                      VBox.vgrow="ALWAYS"
+                      onMouseClicked="#onUserSelected"/>
+
         </VBox>
     </left>
 
-    <!-- CENTER: chat messages -->
+    <!-- CENTER CHAT -->
     <center>
-        <VBox spacing="10" style="-fx-padding: 20;">
-            <Label text="Conversation:" style="-fx-font-size: 16px;"/>
+        <VBox spacing="0" styleClass="chat-container">
+
+            <!-- HEADER -->
+            <HBox styleClass="chat-header">
+                <Label text="Conversation"
+                       styleClass="chat-username"/>
+            </HBox>
+
+            <!-- MESSAGES (compatibil cu controller-ul) -->
             <ListView fx:id="messagesListView"
-                      prefHeight="400"
+                      VBox.vgrow="ALWAYS"
                       onMouseClicked="#onMessageSelected"/>
-        </VBox>
-    </center>
 
-    <!-- BOTTOM: typing area + reply info -->
-    <bottom>
-        <VBox spacing="10" style="-fx-padding: 20;">
-
-            <HBox spacing="10" alignment="CENTER_LEFT">
+            <!-- REPLY INFO -->
+            <HBox spacing="10" style="-fx-padding: 5 15;">
                 <Label fx:id="replyLabel"
-                       text="Replying to: "
-                       visible="false"
-                       style="-fx-text-fill: #444444; -fx-font-size: 14px;"/>
+                       visible="false"/>
                 <Button fx:id="cancelReplyBtn"
                         text="Cancel"
                         visible="false"
                         onAction="#onCancelReply"/>
             </HBox>
 
-            <HBox spacing="10">
+            <!-- INPUT -->
+            <HBox spacing="10" styleClass="chat-input-area">
+
                 <TextArea fx:id="messageBox"
-                          promptText="Type message..."
+                          promptText="Type a message..."
                           prefRowCount="2"
-                          prefWidth="400"/>
+                          HBox.hgrow="ALWAYS"/>
 
                 <Button text="Send"
                         onAction="#onSend"
-                        prefHeight="50"
-                        prefWidth="100"/>
+                        styleClass="primary-button"/>
+
             </HBox>
 
         </VBox>
-    </bottom>
+    </center>
 
 </BorderPane>

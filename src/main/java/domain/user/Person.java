@@ -49,7 +49,7 @@ public class Person extends User {
 
     @Override
     public String toString() {
-        return String.format("PERSON: id: " + id + ", username: " + username + ", name: " + firstName + " " + lastName + ", birthday: " + dateOfBirth.toString() + ", occupation: " + occupation + ", empathyLevel: " + empathyLevel);
+        return username;
     }
 }
 

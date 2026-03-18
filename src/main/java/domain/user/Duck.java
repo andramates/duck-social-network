@@ -66,11 +66,7 @@ public abstract class Duck extends User {
 
     @Override
     public String toString() {
-//        return String.format("DUCK: id: " + id + ", username: " + username +
-//                ", type: " + type + ", speed: " + speed + ", endurance: " + endurance +
-//                ", flock: " + (flock == null ? "no flock" : flock.getName()));
-        return String.format("DUCK: id: " + id + ", username: " + username +
-                ", type: " + type + ", speed: " + speed + ", endurance: " + endurance);
+        return username;
     }
 
     public double getTimp(double distanta) {
